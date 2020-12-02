@@ -160,11 +160,14 @@
 
   <div class="header-panel shadow z-2">
 	<div> 
-	<img src="images/logo.png" width="120" height="120" align="right" STYLE="position:absolute; TOP:12px; RIGHT:45px;"  />
 	</div>
     <div class="container-fluid">
+	<h1 class="title" style="text-align:center">$title$</h1>
+
       <div class="row">
         <div class="col-xs-3">
+				<img src="images/logo.png" width="120" height="120" align="left" STYLE="position:fixed; TOP:5px; LEFT:45px;"  />
+<!--
 	  $if(title)$
 	  <div id="$idprefix$header">
 	    <h1 class="title">$title$</h1>
@@ -187,7 +190,7 @@
 	    $endfor$
 	    $if(date)$
 	    <h4 class="date">$date$</h4>
-	    $endif$
+	    $endif$ -->
 	  </div>
 	  $endif$
 	</div>
@@ -217,11 +220,15 @@
 	<div class="row">
 
 	  <div class="col-xs-10">
+	  <button class="button_toggle_sidebar">Toggle</button>
+
 	    $body$
 	  </div>
-		<!--
+	
 	  <div class="col-xs-2">
-		
+	  	<div class="button_position-header fixed" style="position : fixed">     <button class="button_toggle_sidebar" STYLE="position:relative;">Navigationsleiste</button> </div>
+
+		<!--
 	    $if(code_menu)$
 	    <div class = "btn-toolbar">
 	    <div class="btn-group">
@@ -241,8 +248,8 @@
 	    </div>
 	    </div>
 	    $endif$
-
-	    </div> -->
+-->
+	    </div> 
 		
     </div>
 	
@@ -371,6 +378,20 @@
     });
  </script>
 
+
+<script>
+$$('.button_toggle_sidebar').click(function() {
+
+if($$('.col-xs-3').css("visibility") == "hidden"){
+           $$('.col-xs-3').css('visibility', 'visible');
+		   $$('.col-xs-9').css('width', '75%');
+}else{
+$$('.col-xs-3').css('visibility', 'hidden');
+$$('.col-xs-9').css('width', '99%');
+}
+
+});
+</script>
 
  $if(mathjax-url)$
  <!-- dynamically load mathjax for compatibility with self-contained -->
