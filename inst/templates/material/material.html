@@ -144,7 +144,7 @@
 	<div> 
 
 	</div>
-			    <div class="button_position-col"><button class="button_toggle_sidebar"> <span class="glyphicon glyphicon-menu-hamburger"></span></button></div>
+			    
 
     <div class="container-fluid">
       <div class="row">
@@ -162,6 +162,7 @@
   
   <div class="container-fluid main-container">
     <div class="row">
+<div class="button_position-col"><button class="button_toggle_sidebar"> <span class="glyphicon glyphicon-menu-hamburger"></span></button></div>
 
       <nav class="col-xs-3 menu">
 	<div id="toc">
@@ -184,7 +185,6 @@
 	  <div class="col-xs-10">
 	    $body$
 	  </div>
-
 		
     </div>
 	<!--
@@ -318,8 +318,8 @@
 $$('.button_toggle_sidebar').click(function() {
 
 if($$('.col-xs-3').css("visibility") == "hidden"){
-           $$('.col-xs-3').css('visibility', 'visible');
-		   $$('.col-xs-9').css('width', '75%');
+       $$('.col-xs-3').css('visibility', 'visible');
+		   $$('.col-xs-9').css('width', '85%');
 }else{
 $$('.col-xs-3').css('visibility', 'hidden');
 $$('.col-xs-9').css('width', '99%');
