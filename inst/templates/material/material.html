@@ -49,9 +49,7 @@
     </style>
     $endif$
 
-    $for(css)$
-    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
-    $endfor$
+
 
     <!-- tabsets -->
     <script>
@@ -65,28 +63,9 @@
       });
     </script>
 
-    <!-- code folding -->
-    $if(code_menu)$
-    <script>
-      $$(document).ready(function () {
-	  $if(source_embed)$
-	  window.initializeSourceEmbed("$source_embed$");
-	  $endif$
-	  $if(code_folding)$
-	  window.initializeCodeFolding("$code_folding$" === "show");
-	  $endif$
-      });
-    </script>
-    $endif$
 
-    <!-- code download -->
-    $if(source_embed)$
-    <style>
-      #rmd-source-code {
-	  display: none;
-      }
-    </style>
-    $endif$
+
+
 
 
     <!-- tabsets dropdown -->
@@ -153,119 +132,69 @@
 	  display: none;
       }
     </style>
-    
+	
+        $for(css)$
+    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+    $endfor$
 </head>
 
 <body>
 
   <div class="header-panel shadow z-2">
 	<div> 
+
 	</div>
+			    <div class="button_position-col"><button class="button_toggle_sidebar"> <span class="glyphicon glyphicon-menu-hamburger"></span></button></div>
 
     <div class="container-fluid">
-
       <div class="row">
 
         <div class="col-xs-3">
-
 				<img src="images/logo.png" width="120" height="120" align="left" STYLE="margin-left: 20px;margin-top: 5px;"  />
-<!--
-	  $if(title)$
-	  <div id="$idprefix$header">
-	    <h1 class="title">$title$</h1>
-	    $if(subtitle)$
-	    <h1 class="subtitle">$subtitle$</h1>
-	    $endif$
-	    $for(author)$
-	    $if(author.name)$
-	    <h4 class="author">$author.name$</h4>
-	    $if(author.affiliation)$
-	    <address class="author_afil">
-	      $author.affiliation$<br>$endif$
-	      $if(author.email)$
-	      <a class="author_email" href="mailto:#">$author.email$</a>
-	    </address>
-	    $endif$
-	    $else$
-	    <h4 class="author">$author$</h4>
-	    $endif$
-	    $endfor$
-	    $if(date)$
-	    <h4 class="date">$date$</h4>
-	    $endif$  -->
-	  </div> 
-	  $endif$ 
+
 	</div>
+
+	  	  <h1 class="title" style="color: black;">$title$</h1>
+	  
       </div>
     </div>
   </div>
-
+  
   <div class="container-fluid main-container">
     <div class="row">
-	    <div class="button_position-col"><button class="button_toggle_sidebar"> <span class="glyphicon glyphicon-menu-hamburger"></span></button></div>
-<h1 class="title"></h1>
-      <nav class="col-xs-3 menu">
 
+      <nav class="col-xs-3 menu">
 	<div id="toc">
           $toc$
 	</div>
       </nav>
       
       <div class="pages col-xs-9">
-
+	<!--
     $if(include-before)$        
     <div class="row">
 	    $for(include-before)$
 	    $include-before$
 	    $endfor$
     </div>
-    $endif$
-
-<h1 class="title" style="color: black;">$title$</h1>
-
+    $endif$-->
+    
 	<div class="row">
 
 	  <div class="col-xs-10">
-
-
 	    $body$
 	  </div>
 
-<!--
-	  <div class="col-xs-2">
-
-		<!--
-	    $if(code_menu)$
-	    <div class = "btn-toolbar">
-	    <div class="btn-group">
-	      <a class="btn btn-raised btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>Code</span> <span class="caret"></span></a>
-	      <ul class="dropdown-menu" style="min-width: 50px;">
-		$if(code_folding)$
-		<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-		<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-		$if(source_embed)$
-		<li role="separator" class="divider"></li>
-		$endif$
-		$endif$
-		$if(source_embed)$
-		<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
-		$endif$
-	      </ul>
-	    </div>
-	    </div>
-	    $endif$
-
-	    </div> -->
 		
     </div>
-	
+	<!--
     $if(include-after)$        
     <div id="include-after" class="row">
 	    $for(include-after)$
 	    $include-after$
 	    $endfor$
     </div>
-    $endif$
+    $endif$ -->
 
     </div>
   </div>
