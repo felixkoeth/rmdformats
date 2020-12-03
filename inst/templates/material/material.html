@@ -161,12 +161,14 @@
   <div class="header-panel shadow z-2">
 	<div> 
 	</div>
+
     <div class="container-fluid">
-	<h1 class="title" style="text-align:center">$title$</h1>
 
       <div class="row">
+
         <div class="col-xs-3">
-				<img src="images/logo.png" width="120" height="120" align="left" STYLE="position:fixed; TOP:5px; LEFT:45px;"  />
+
+				<img src="images/logo.png" width="120" height="120" align="left" STYLE="margin-left: 20px;margin-top: 5px;"  />
 <!--
 	  $if(title)$
 	  <div id="$idprefix$header">
@@ -190,18 +192,20 @@
 	    $endfor$
 	    $if(date)$
 	    <h4 class="date">$date$</h4>
-	    $endif$ -->
-	  </div>
-	  $endif$
+	    $endif$  -->
+	  </div> 
+	  $endif$ 
 	</div>
       </div>
     </div>
   </div>
-  
+
   <div class="container-fluid main-container">
     <div class="row">
-
+	    <div class="button_position-col"><button class="button_toggle_sidebar"> <span class="glyphicon glyphicon-menu-hamburger"></span></button></div>
+<h1 class="title"></h1>
       <nav class="col-xs-3 menu">
+
 	<div id="toc">
           $toc$
 	</div>
@@ -216,16 +220,19 @@
 	    $endfor$
     </div>
     $endif$
-    
+
+<h1 class="title" style="color: black;">$title$</h1>
+
 	<div class="row">
 
 	  <div class="col-xs-10">
 
+
 	    $body$
 	  </div>
-	
+
+<!--
 	  <div class="col-xs-2">
-	  	<div class="button_position-header fixed" style="position : fixed">     <button class="button_toggle_sidebar" STYLE="position:relative;">Navigationsleiste</button> </div>
 
 		<!--
 	    $if(code_menu)$
@@ -247,8 +254,8 @@
 	    </div>
 	    </div>
 	    $endif$
--->
-	    </div> 
+
+	    </div> -->
 		
     </div>
 	
