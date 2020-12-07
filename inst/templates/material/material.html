@@ -272,7 +272,13 @@
 	    window.location.hash = window.page;
 	    //$$(this).addClass("active");
 	    page.show();
+		//Reload shiny frames to solve bug with legend
+		var links = document.getElementsByClassName("shiny-frame");
 
+		for (var i = 0; i < links.length; i++){
+			links[i].contentWindow.location.reload()
+		  }
+		
 	    var totop = setInterval(function () {
 		$$(".pages").animate({scrollTop: 0}, 0);
 	    }, 10);

@@ -300,3 +300,19 @@ table .panel-body {
   font-weight: bold;
 }
 
+
+.button_toggle_sidebar {
+  
+  background-color: transparent;
+  border-color: transparent;
+
+}
+
+.button_position-col { 
+  
+  position : absolute;
+  font-size: 20px;
+  z-index: 10;
+  bottom: 0px;
+  
+}
