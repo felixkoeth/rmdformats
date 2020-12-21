@@ -15,8 +15,8 @@
 
     <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
     <!-- Material Design fonts -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     $for(header-includes)$
     $header-includes$
@@ -198,7 +198,7 @@
 
     </div>
   </div>
-
+</div>
  <script>
     $$(document).ready(function () {
 	// add bootstrap table styles to pandoc tables
@@ -272,13 +272,14 @@
 	    window.location.hash = window.page;
 	    //$$(this).addClass("active");
 	    page.show();
-		//Reload shiny frames to solve bug with legend
+		//Reload shiny frames to solve bug with legend in plotly. Not used because of performance, but works.
+		/*
 		var links = document.getElementsByClassName("shiny-frame");
 
 		for (var i = 0; i < links.length; i++){
 			links[i].contentWindow.location.reload()
 		  }
-		
+		*/
 	    var totop = setInterval(function () {
 		$$(".pages").animate({scrollTop: 0}, 0);
 	    }, 10);
